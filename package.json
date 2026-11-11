@@ -1,0 +1,38 @@
+{
+	"name": "drill-insights",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"imports": {
+		"#lib": "./src/lib/index.js",
+		"#lib/*": "./src/lib/*"
+	},
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"data": "node scripts/generate-data.mjs",
+		"test": "vitest run",
+		"test:e2e": "playwright test"
+	},
+	"devDependencies": {
+		"@axe-core/playwright": "^4.14.0",
+		"@duckdb/node-api": "^2.0.0-r.1",
+		"@playwright/test": "^1.65.0",
+		"@sveltejs/adapter-static": "^4.0.1",
+		"@sveltejs/kit": "^3.0.0",
+		"@sveltejs/vite-plugin-svelte": "^7.2.0",
+		"svelte": "^5.57.2",
+		"svelte-check": "^4.6.0",
+		"typescript": "^6.0.3",
+		"vite": "^8.3.0",
+		"vitest": "^5.1.0"
+	},
+	"dependencies": {
+		"@duckdb/duckdb-wasm": "^1.33.1-dev57.0",
+		"apache-arrow": "^21.2.0"
+	}
+}
